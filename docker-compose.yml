@@ -1,0 +1,15 @@
+volumes:
+  usr050524:
+
+services:
+  db-usr:
+    image: postgres
+    container_name: db-usr
+    restart: always
+    shm_size: 128mb
+    volumes:
+      - usr050524:/var/lib/postgresql/data:rw
+    environment:
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - "5432:5432"
